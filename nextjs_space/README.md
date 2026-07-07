@@ -58,6 +58,8 @@ Principais variaveis:
 
 - `NEXTAUTH_SECRET`: segredo forte para assinar sessoes.
 - `NEXTAUTH_URL`: URL publica da aplicacao.
+- `NEXT_PUBLIC_APP_BRAND_NAME`: Nome da Marca do cliente
+- `MANUAL_UPLOAD_CRAWLER_TIMEOUT_SECONDS`: tempo maximo para o upload manual sair de `CRAWLING` antes de marcar erro. Padrao: `60`.
 - `COGNITO_CLIENT_ID`: App Client ID do Cognito.
 - `COGNITO_CLIENT_SECRET`: App Client Secret do Cognito.
 - `COGNITO_ISSUER`: issuer do User Pool, no formato `https://cognito-idp.REGION.amazonaws.com/USER_POOL_ID`.
@@ -67,12 +69,21 @@ Principais variaveis:
 - `AWS_REGION`: regiao AWS.
 - `AWS_S3_BUCKET_XLSX`: bucket transient que recebe os arquivos manuais, sem `s3://`.
 - `AWS_S3_XLSX_PREFIX`: prefixo do bucket para arquivos manuais.
-- `MANUAL_UPLOAD_CRAWLER_TIMEOUT_SECONDS`: tempo maximo para o upload manual sair de `CRAWLING` antes de marcar erro. Padrao: `60`.
 - `AWS_S3_SCHEDULER_CALENDAR_BUCKET`, `AWS_S3_SCHEDULER_CALENDAR_PREFIX`: destino do scheduler calendar.
+- `AWS_S3_EXTRACTION_BUCKET`, `AWS_S3_EXTRACTION_PREFIX`: destino das querys de extração
+- `EXTRACTION_TABLE_NAME`: tabela utilizada para extração final
 - `AWS_STEP_FUNCTION_INGESTION_MASTER_ARN`: ARN da Step Function unica de ingestao.
+- `AWS_STEP_FUNCTION_TRANSFORMATION_ONLY_ARN`: ARN da Step Function de somente transformação.
+- `AWS_DYNAMODB_CONFIG_TABLE`: tabela do dynamo com metadados de tabelas de ingestão manual.
 - `AWS_DYNAMODB_INGESTION_RAW_TABLE`: configuracoes das APIs usadas pela Step Function.
 - `AWS_DYNAMODB_INGESTION_RAW_IGNORE_TABLE`: controle de tabelas ignoradas no fluxo API.
 - `AWS_DYNAMODB_EXECUTION_HISTORY_TABLE`: historico operacional exibido em historico/monitoramento. Sugestao de nome: `ingestion-app-execution-history`.
+- `MANUAL_INGESTION_ORIGIN_PREFIX`: prefixo S3 de origem da ingestão manual
+- `MANUAL_INGESTION_DESTINATION_BUCKET`, `MANUAL_INGESTION_DESTINATION_PREFIX`: Bucket de destino dos arquivos ".parquet" 
+- `MANUAL_INGESTION_PROCESSING_TYPE`: tipo de arquivo para ingestão. Padrão: `xlsx`
+- `MANUAL_INGESTION_TYPE_PROCESS`: Padrão: `lambda`
+- `MANUAL_INGESTION_LOAD_FULL`: se as tabelas serão full load ou não
+- `MANUAL_INGESTION_VISIBLE_ORIGIN_PATH_PREFIX`: prefixo S3 de origem da ingestão manual
 
 As variaveis de DynamoDB esperam **nome da tabela**, nao ARN.
 
