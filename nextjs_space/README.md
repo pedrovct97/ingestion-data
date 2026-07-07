@@ -78,12 +78,12 @@ Principais variaveis:
 - `AWS_DYNAMODB_INGESTION_RAW_TABLE`: configuracoes das APIs usadas pela Step Function.
 - `AWS_DYNAMODB_INGESTION_RAW_IGNORE_TABLE`: controle de tabelas ignoradas no fluxo API.
 - `AWS_DYNAMODB_EXECUTION_HISTORY_TABLE`: historico operacional exibido em historico/monitoramento. Sugestao de nome: `ingestion-app-execution-history`.
-- `MANUAL_INGESTION_ORIGIN_PREFIX`: prefixo S3 de origem da ingestão manual
-- `MANUAL_INGESTION_DESTINATION_BUCKET`, `MANUAL_INGESTION_DESTINATION_PREFIX`: Bucket de destino dos arquivos ".parquet" 
+- `MANUAL_INGESTION_ORIGIN_PREFIX`: prefixo S3 de origem da ingestão manual.
+- `MANUAL_INGESTION_DESTINATION_BUCKET`, `MANUAL_INGESTION_DESTINATION_PREFIX`: Bucket de destino dos arquivos `parquet`.
 - `MANUAL_INGESTION_PROCESSING_TYPE`: tipo de arquivo para ingestão. Padrão: `xlsx`
 - `MANUAL_INGESTION_TYPE_PROCESS`: Padrão: `lambda`
-- `MANUAL_INGESTION_LOAD_FULL`: se as tabelas serão full load ou não
-- `MANUAL_INGESTION_VISIBLE_ORIGIN_PATH_PREFIX`: prefixo S3 de origem da ingestão manual
+- `MANUAL_INGESTION_LOAD_FULL`: se as tabelas serão full load ou não.
+- `MANUAL_INGESTION_VISIBLE_ORIGIN_PATH_PREFIX`: prefixo S3 de origem da ingestão manual.
 
 As variaveis de DynamoDB esperam **nome da tabela**, nao ARN.
 
